@@ -1,0 +1,17 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="delaware.global.services.BudgetToolUI5FileUpload">
+			<EntityType Name="CostCenterType">
+				<Key><PropertyRef Name="TYPE"/><PropertyRef Name="ID_FROM"/><PropertyRef Name="ID_TO"/></Key><Property Name="TYPE" Type="Edm.String" Nullable="false" MaxLength="2"/><Property Name="ID_FROM" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="ID_TO" Type="Edm.String" Nullable="false" MaxLength="20"/></EntityType>
+			<EntityType Name="FinancStmtHrchyType">
+				<Key><PropertyRef Name="FSH_LEVEL3"/><PropertyRef Name="COSTCENTER"/></Key><Property Name="FSH_LEVEL3" Type="Edm.String" Nullable="false" MaxLength="12"/><Property Name="COSTCENTER" Type="Edm.String" Nullable="false" MaxLength="10"/><Property Name="FSH_CODE" Type="Edm.String" MaxLength="15"/><Property Name="FLAG_SOLUTION" Type="Edm.String" MaxLength="1"/></EntityType>
+			<EntityType Name="FSH_CSV_DataType">
+				<Key><PropertyRef Name="FSH_LEVEL3"/><PropertyRef Name="COSTCENTER"/></Key><Property Name="FSH_LEVEL3" Type="Edm.String" Nullable="false" MaxLength="12"/><Property Name="COSTCENTER" Type="Edm.String" Nullable="false" MaxLength="10"/><Property Name="FSH_CODE" Type="Edm.String" MaxLength="15"/><Property Name="FLAG_SOLUTION" Type="Edm.String" MaxLength="1"/></EntityType>
+			<EntityType Name="CC_CSV_DataType">
+				<Key><PropertyRef Name="TYPE"/><PropertyRef Name="ID_FROM"/><PropertyRef Name="ID_TO"/></Key><Property Name="TYPE" Type="Edm.String" Nullable="false" MaxLength="2"/><Property Name="ID_FROM" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="ID_TO" Type="Edm.String" Nullable="false" MaxLength="20"/></EntityType>
+			<EntityContainer Name="BudgetToolUI5FileUpload" m:IsDefaultEntityContainer="true"><EntitySet Name="CostCenter" EntityType="delaware.global.services.BudgetToolUI5FileUpload.CostCenterType"/><EntitySet Name="FinancStmtHrchy" EntityType="delaware.global.services.BudgetToolUI5FileUpload.FinancStmtHrchyType"/><EntitySet Name="FSH_CSV_Data" EntityType="delaware.global.services.BudgetToolUI5FileUpload.FSH_CSV_DataType"/><EntitySet Name="CC_CSV_Data" EntityType="delaware.global.services.BudgetToolUI5FileUpload.CC_CSV_DataType"/></EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

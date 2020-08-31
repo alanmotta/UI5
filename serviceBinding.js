@@ -1,0 +1,1 @@
+function initModel(){var e="/delaware/global/services/BugetToolUI5FileUpload.xsodata/";var a=new sap.ui.model.odata.ODataModel(e,true);sap.ui.getCore().setModel(a)}

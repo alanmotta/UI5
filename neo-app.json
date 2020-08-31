@@ -1,0 +1,58 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/api-rest",
+      "target": {
+        "type": "destination",
+        "name": "FiMappingReadFile"
+      },
+      "description": "Fi Mapping Tool File Upload"
+    },
+    {
+      "path": "/api-odata",
+      "target": {
+        "type": "destination",
+        "name": "FiMappingUpload"
+      },
+      "description": "Fi Mapping Tool OData services"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}

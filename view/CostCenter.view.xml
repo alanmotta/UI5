@@ -1,0 +1,17 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="delaware.reporting.sacimport.bugettool.BugetToolFileUpdate.controller.CostCenter">
+	<Page>
+		<sap.m.semantic:SemanticPage xmlns:sap.m.semantic="sap.m.semantic" title="Cost Center Maintain" id="page1">
+			<sap.m.semantic:content>
+				<sap.ui.comp.smartfilterbar:SmartFilterBar xmlns:sap.ui.comp.smartfilterbar="sap.ui.comp.smartfilterbar" class="sapContrastPlus" hSpacing="0" filterBarExpanded="true" enableBasicSearch="true" showGoOnFB="true" id="SFilterCC" entitySet="CostCenterType" persistencyKey="SmartFilterPer" considerSelectionVariants="true" advancedMode="true" basicSearchFieldName="TYPE" defaultSelectionVariantName="Standard">
+					<sap.ui.comp.smartfilterbar:controlConfiguration>
+						<sap.ui.comp.smartfilterbar:ControlConfiguration/>
+					</sap.ui.comp.smartfilterbar:controlConfiguration>
+				</sap.ui.comp.smartfilterbar:SmartFilterBar>
+				<sap.ui.comp.smarttable:SmartTable xmlns:sap.ui.comp.smarttable="sap.ui.comp.smarttable" width="100%" direction="Column" fitContainer="true" tableType="ResponsiveTable" header="Items" enableAutoBinding="true" id="STableCC" smartFilterId="SFilterCC" initiallyVisibleFields="TYPE,ID_FROM,ID_TO" persistencyKey="SmartTablePK" useVariantManagement="false" entitySet="CostCenter" beforeExport="onBeforeExport"/>
+			</sap.m.semantic:content>
+		<sap.m.semantic:customHeaderContent>
+		    <Button xmlns="sap.m" text="Upload CC" id="btnLoadCC" press="onPressUploadCC" icon="sap-icon://upload" type="Emphasized"/>
+		</sap.m.semantic:customHeaderContent>
+		</sap.m.semantic:SemanticPage>
+	</Page>
+</mvc:View>

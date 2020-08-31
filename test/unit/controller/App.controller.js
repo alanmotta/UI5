@@ -1,0 +1,1 @@
+sap.ui.define(["delaware/reporting/sacimport/bugettool/BugetToolFileUpdate/controller/App.controller"],function(t){"use strict";QUnit.module("App Controller");QUnit.test("I should test the App controller",function(o){var e=new t;e.onInit();o.ok(e)})});

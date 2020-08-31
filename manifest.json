@@ -1,0 +1,175 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "delaware.reporting.sacimport.bugettool.BugetToolFileUpdate",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "FiMappingUpload": {
+                "uri": "/api-odata/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/FiMappingUpload/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "delaware.reporting.sacimport.bugettool.BugetToolFileUpdate.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.codeeditor": {
+                    "minVersion": ""
+                },
+                "sap.ui.commons": {
+                    "minVersion": ""
+                },
+                "sap.ui.comp": {
+                    "minVersion": ""
+                },
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.ui.table": {
+                    "minVersion": ""
+                },
+                "sap.ui.unified": {
+                    "minVersion": ""
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "delaware.reporting.sacimport.bugettool.BugetToolFileUpdate.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "FiMappingUpload",
+                "preload": true
+            },
+            "newUploadModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "delaware.reporting.sacimport.bugettool.BugetToolFileUpdate.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "CostCenter",
+                    "pattern": "",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "CostCenter"
+                    ]
+                },
+                {
+                    "name": "UploadCostCenter",
+                    "pattern": "UpCostCenter",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "UploadCostCenter"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetApp": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "App",
+                    "viewName": "App"
+                },
+                "CostCenter": {
+                    "viewType": "XML",
+                    "viewName": "CostCenter",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
+                },
+                "FinancStmtHrchy": {
+                    "viewType": "XML",
+                    "viewName": "FinancStmtHrchy",
+                    "controlAggregation": "pages",
+                    "controlId": "app"
+                },
+                "UploadCostCenter": {
+                    "viewType": "XML",
+                    "viewName": "UploadCostCenter",
+                    "controlAggregation": "pages",
+                    "controlId": "app"
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
+    }
+}

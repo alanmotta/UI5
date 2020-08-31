@@ -1,0 +1,48 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic" xmlns:l="sap.ui.layout.form" xmlns:u="sap.ui.unified" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="delaware.reporting.sacimport.bugettool.BugetToolFileUpdate.controller.UploadCostCenter">
+	<semantic:SemanticPage xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" title="Upload Cost Center" id="page0" showNavButton="true" titleLevel="H6" floatingFooter="true" navButtonPress="onNavButtonPress">
+		<semantic:customHeaderContent>
+			<Button xmlns="sap.m" text="Clear" id="btnClear" icon="sap-icon://eraser" type="Emphasized" press="onClear"/>
+		</semantic:customHeaderContent>
+		<semantic:content>
+			<Label text="File name:" width="100%" id="label1"/>
+			<FlexBox width="100%" id="box0" justifyContent="Center">
+				<items>
+					<!--<u:FileUploader id="idfileUploader" placeholder="Choose a CSV file..." style="Emphasized" width="100%" fileType="csv" uploadUrl="https://i5qad9c5090c.hana.ondemand.com/delaware/reporting/services/ReadLinesFileUpload.xsjs" uploadComplete="onUploadComplete" sendXHR="false"/>-->
+					<u:FileUploader id="idfileUploader" placeholder="Choose a CSV file..." style="Emphasized" width="100%" fileType="csv" uploadUrl="/sap/fiori/budgettoolfileupdate/api-rest/ReadLinesFileUpload.xsjs" uploadComplete="onUploadComplete"/>
+					<Button text="Upload" id="btnUpCC" press="onUpload"/>
+				</items>
+			</FlexBox>
+			<Table id="table1" items="{/CC_CSV_Data}" headerText="Cost Center" alternateRowColors="true">
+				<items>
+					<ColumnListItem type="Active" id="item1">
+						<cells>
+							<Text text="{TYPE}"/>
+							<Text text="{ID_FROM}"/>
+							<Text text="{ID_TO}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column id="column3">
+						<header>
+							<Label text="TYPE"/>
+						</header>
+					</Column>
+					<Column id="column4">
+						<header>
+							<Label text="ID SCP"/>
+						</header>
+					</Column>
+					<Column id="column5">
+						<header>
+							<Label text="ID SAC"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		</semantic:content>
+		<semantic:customFooterContent>
+			<Button xmlns="sap.m" id="btnSaveCC" icon="sap-icon://save" type="Emphasized" text="Save" press="onSaveCC"/>
+		</semantic:customFooterContent>
+	</semantic:SemanticPage>
+</mvc:View>
